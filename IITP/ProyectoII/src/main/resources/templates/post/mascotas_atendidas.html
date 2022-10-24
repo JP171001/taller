@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="=Content-Type" context="text/html; charset=UTF-8"/>
+    <title>Mascotas Atendidas</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container mt-4">
+    <table class="table">
+        <thead class="table">
+        <tr>
+            <th>ID</th>
+            <th>Tipo de Mascota</th>
+            <th>Nombre</th>
+            <th>Fecha</th>
+            <th>Cedula Dueno</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="actual:${ma}">
+            <td th:text="${actual.getId_mascota()}"></td>
+            <td th:text="${actual.getTipo_mascota()}"></td>
+            <td th:text="${actual.getNombre_mascota()}"></td>
+            <td th:text="${actual.getFecha_nacimiento()}"></td>
+            <td th:text="${actual.getDuenoByName()}"></td>
+        </tr>
+        <a href="/">
+            <button>incio</button>
+        </a>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
