@@ -1,6 +1,5 @@
 package com.example.demo.service.clientePackage;
 
-import com.example.demo.model.clientePackage.FacturaAtencion;
 import com.example.demo.model.clientePackage.FacturaCompra;
 
 import java.util.Date;

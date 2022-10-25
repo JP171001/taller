@@ -1,18 +1,18 @@
 package com.example.demo.service.hospitalPackage;
 
-import com.example.demo.model.hospitalPackage.HospitalVeterinario;
+import com.example.demo.model.hospitalPackage.VentaRepuestos;
 
 import java.util.List;
 
 public interface HospitalService {
 
-    List<HospitalVeterinario> getAllHospitales();
+    List<VentaRepuestos> getAllHospitales();
 
-    HospitalVeterinario saveHospital(HospitalVeterinario hospitalVeterinario);
+    VentaRepuestos saveHospital(VentaRepuestos ventaRepuestos);
 
-    HospitalVeterinario getHospitalById(int identificador);
+    VentaRepuestos getHospitalById(int identificador);
 
-    HospitalVeterinario updateHospital(HospitalVeterinario hospitalVeterinario);
+    VentaRepuestos updateHospital(VentaRepuestos ventaRepuestos);
 
     void deleteHospital(int identificador);
 }

@@ -5,7 +5,7 @@ import javax.persistence.*;
 //Esta anotacion le hace saber a la base de datos que las clases que hereden de esta van a tener los atributos
 // en sus tablas respectivas
 @MappedSuperclass
-public abstract class Persona {
+public abstract class Usuario {
 
     //Atributos de una persona
     //La anotacion de column en cada atributo es para denotar su posicion en la base de datos
@@ -20,11 +20,11 @@ public abstract class Persona {
     @Column(name = "apellido")
     private String apellido;
 
-    @Column(name = "direccion")
-    private String direccion;
+    @Column(name = "email")
+    private String email;
 
-    @Column(name = "telefono")
-    private int telefono;
+    @Column(name = "contrasena")
+    private String contrasena;
 
     //Gets y setters
     public int getCedula() {
@@ -51,20 +51,20 @@ public abstract class Persona {
         this.apellido = apellido;
     }
 
-    public String getDireccion() {
-        return direccion;
+    public String getEmail() {
+        return email;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public int getTelefono() {
-        return telefono;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setTelefono(int telefono) {
-        this.telefono = telefono;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
     //Metodos extras

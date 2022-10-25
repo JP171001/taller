@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 // Controller para el menu del veterinario
 @Controller
 @RequestMapping
-public class VistaVeterinarioController {
+public class VistaAdministradorController {
     @GetMapping("/")
     public String inicio(Model model){
         model.addAttribute("test");

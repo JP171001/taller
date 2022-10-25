@@ -1,6 +1,5 @@
 package com.example.demo.model.hospitalPackage;
 
-import com.example.demo.model.clientePackage.FacturaAtencion;
 import com.example.demo.model.clientePackage.FacturaCompra;
 
 import javax.persistence.*;
@@ -29,9 +28,6 @@ public class Producto {
 
     @ManyToMany(mappedBy = "productos_comprados")
     List<FacturaCompra> facturas_compra_asociada;
-
-    @ManyToMany(mappedBy = "productos")
-    List<FacturaAtencion> facturas_atencion_asociada;
 
 
     //Gets y setters
@@ -84,11 +80,4 @@ public class Producto {
         this.facturas_compra_asociada = facturas_compra_asociada;
     }
 
-    public List<FacturaAtencion> getFacturas_atencion_asociada() {
-        return facturas_atencion_asociada;
-    }
-
-    public void setFacturas_atencion_asociada(List<FacturaAtencion> facturas_atencion_asociada) {
-        this.facturas_atencion_asociada = facturas_atencion_asociada;
-    }
 }

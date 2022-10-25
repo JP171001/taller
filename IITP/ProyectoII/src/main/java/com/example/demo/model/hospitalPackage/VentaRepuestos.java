@@ -9,8 +9,8 @@ import java.util.List;
 
 //Esta anotacion hace saber el tipo de bean, en este caso una entidad
 @Entity
-@Table(name = "hospital_veterinario") //Se hace referencia a la tabla en la base de datos
-public class HospitalVeterinario {
+@Table(name = "venta_de_repuestos") //Se hace referencia a la tabla en la base de datos
+public class VentaRepuestos {
 
     //Anotacion para hacer las relaciones respectivas de muchos a uno en la base de datos,
     //Con esto spring se encarga de hacer las conexiones respectivas a nivel de java, obentiendo los datos de las distinas tablas
@@ -23,7 +23,7 @@ public class HospitalVeterinario {
     @Column(name = "nombre")
     private String nombre;
 
-    @OneToMany(mappedBy = "hospitalAsociado")
+    @OneToMany(mappedBy = "ventaAsociada")
     private List<Cliente> clienteList;
 
     @OneToMany(mappedBy = "hospital_asociado")

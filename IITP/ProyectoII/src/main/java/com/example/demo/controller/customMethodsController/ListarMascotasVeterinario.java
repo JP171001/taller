@@ -1,6 +1,6 @@
 package com.example.demo.controller.customMethodsController;
 
-import com.example.demo.service.veterinarioPackage.VeterinarioService;
+import com.example.demo.service.administradorPackage.AdministradorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,13 +15,13 @@ public class ListarMascotasVeterinario {
 
     //Inyeccion para obtener los metodos de veterinario
     @Autowired
-    private VeterinarioService veterinarioService;
+    private AdministradorService administradorService;
 
     //Pantalla para obtener la veterinario en especifico
     @GetMapping("/get_vet")
     public String getCliente(Model model){
         model.addAttribute("a");
-        return "get/escoger_veterinario";
+        return "escoger_administrador";
     }
 
     //Pantalla mostrar las mascotas respectivas
@@ -32,7 +32,7 @@ public class ListarMascotasVeterinario {
         }
 
         //Se añade al modelo el veterinario especifico
-        model.addAttribute("cym",veterinarioService.getVetById(id));
+        model.addAttribute("cym", administradorService.getAdminById(id));
         return "post/vet_mascota";
     }
 }

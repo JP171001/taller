@@ -1,9 +1,8 @@
 package com.example.demo.model.mascotaPackage;
 
-import com.example.demo.model.hospitalPackage.HospitalVeterinario;
+import com.example.demo.model.hospitalPackage.VentaRepuestos;
 import com.example.demo.model.clientePackage.Cliente;
 import com.example.demo.model.clientePackage.FacturaCompra;
-import com.example.demo.model.mascotaPackage.ExpedienteTratamiento;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -39,7 +38,7 @@ public class Mascota {
 
     @ManyToOne
     @JoinColumn(name="hospital_id",nullable = false)
-    private HospitalVeterinario hospital_asociado;
+    private VentaRepuestos hospital_asociado;
 
     @ManyToMany(mappedBy = "mascota_asociadas")
     List<FacturaCompra> facturas_asociada;
@@ -92,11 +91,11 @@ public class Mascota {
         this.dueno = dueno;
     }
 
-    public HospitalVeterinario getHospital_asociado() {
+    public VentaRepuestos getHospital_asociado() {
         return hospital_asociado;
     }
 
-    public void setHospital_asociado(HospitalVeterinario hospital_asociado) {
+    public void setHospital_asociado(VentaRepuestos hospital_asociado) {
         this.hospital_asociado = hospital_asociado;
     }
 

@@ -1,7 +1,6 @@
 package com.example.demo.controller.crudMethodsController;
 
 import com.example.demo.service.mascotaPackage.MascotaService;
-import com.example.demo.service.veterinarioPackage.VeterinarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 // Controller para manejar las operaciones CRUD de la entidad mascota
 @Controller
 @RequestMapping
-public class MascotaController {
+public class ProductController {
 
     //Inyeccion de dependecia para obtener los metodos de la mascota
     @Autowired

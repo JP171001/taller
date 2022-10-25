@@ -1,6 +1,5 @@
 package com.example.demo.dao.clientePackage;
 
-import com.example.demo.model.clientePackage.FacturaAtencion;
 import com.example.demo.model.clientePackage.FacturaCompra;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

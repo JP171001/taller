@@ -14,20 +14,16 @@
             Crear
         </a>
         <tr>
-            <th>Veterinario Cedula</th>
-            <th>Veterinario Nombre Completo</th>
-            <th>Dia</th>
-            <th>Hora inicio</th>
-            <th>Hora fin</th>
+            <th>ID Administrador</th>
+            <th>Nombre Completo</th>
+            <th>email</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="actual:${horarios}">
-            <td th:text="${actual.getVeterinario().getCedula()}"></td>
-            <td th:text="${actual.getVeterinario().getNombreCompleto()}"></td>
-            <td th:text="${actual.getDia()}"></td>
-            <td th:text="${actual.getHora_inicio()}"></td>
-            <td th:text="${actual.getHora_fin()}"></td>
+        <tr th:each="actual:${administradores}">
+            <td th:text="${actual.getCedula()}"></td>
+            <td th:text="${actual.getNombreCompleto()}"></td>
+            <td th:text="${actual.getEmail()}"></td>
             <td >
                 <a href="updateCliente/${actual.getCedula()}" class="btn btn-warning">Editar</a>
                 <a class="btn btn-danger">Eliminar</a>

@@ -1,9 +1,8 @@
 package com.example.demo.model.clientePackage;
 
-import com.example.demo.model.hospitalPackage.HospitalVeterinario;
+import com.example.demo.model.hospitalPackage.VentaRepuestos;
 import com.example.demo.model.hospitalPackage.Producto;
-import com.example.demo.model.hospitalPackage.Servicio;
-import com.example.demo.model.abstracts.Persona;
+import com.example.demo.model.abstracts.Usuario;
 import com.example.demo.model.mascotaPackage.Mascota;
 
 import javax.persistence.*;
@@ -13,40 +12,27 @@ import java.util.List;
 //Esta anotacion hace saber el tipo de bean, en este caso una entidad
 @Entity
 @Table(name = "cliente") //Se hace referencia a la tabla en la base de datos
-public class Cliente extends Persona {
+public class Cliente extends Usuario {
 
     //Anotacion para hacer las relaciones respectivas de muchos a uno en la base de datos,
     //Con esto spring se encarga de hacer las conexiones respectivas a nivel de java, obentiendo los datos de las distinas tablas
     //en la base de datos
     @ManyToOne
-    @JoinColumn(name = "hospital_id",nullable = false)
-    private HospitalVeterinario hospitalAsociado;
-
-    @OneToMany(mappedBy = "dueno")
-    private List<Mascota> mascotas;
+    @JoinColumn(name = "venta_id",nullable = false)
+    private VentaRepuestos ventaAsociada;
 
     @OneToMany(mappedBy = "cliente")
     private List<FacturaCompra> facturasCompra;
 
-    @OneToMany(mappedBy = "cliente")
-    private List<FacturaAtencion> facturasAtencions;
-
 
     //Gets y setters
-    public List<Mascota> getMascotas() {
-        return mascotas;
+
+    public VentaRepuestos getVentaAsociada() {
+        return ventaAsociada;
     }
 
-    public HospitalVeterinario getHospitalAsociado() {
-        return hospitalAsociado;
-    }
-
-    public void setHospitalAsociado(HospitalVeterinario hospitalAsociado) {
-        this.hospitalAsociado = hospitalAsociado;
-    }
-
-    public void setMascotas(List<Mascota> mascotas) {
-        this.mascotas = mascotas;
+    public void setVentaAsociada(VentaRepuestos hospitalAsociado) {
+        this.ventaAsociada = hospitalAsociado;
     }
 
     public List<FacturaCompra> getFacturasCompra() {
@@ -57,13 +43,6 @@ public class Cliente extends Persona {
         this.facturasCompra = facturasCompra;
     }
 
-    public List<FacturaAtencion> getFacturasAtencions() {
-        return facturasAtencions;
-    }
-
-    public void setFacturasAtencions(List<FacturaAtencion> facturasAtencions) {
-        this.facturasAtencions = facturasAtencions;
-    }
 
 
     //Metodos extra
@@ -75,16 +54,6 @@ public class Cliente extends Persona {
         }
 
         return facturasId;
-    }
-
-    public List<String> getMascotasByName(){
-        List<String> mascotasName = new ArrayList<>();
-
-        for(Mascota mascotaActual : this.getMascotas()){
-            mascotasName.add(mascotaActual.getNombre_mascota());
-        }
-
-        return mascotasName;
     }
 
     public List<Integer> getFacturasCompraById(){
@@ -126,45 +95,6 @@ public class Cliente extends Persona {
         return returnList;
     }
 
-    public List<Integer> getFacturasAtencionById(){
-        List<Integer> facturasId = new ArrayList<>();
-
-        for(FacturaAtencion facturaAtencion : this.getFacturasAtencions()){
-            facturasId.add(facturaAtencion.getNumero_factura_atencion());
-        }
-
-        return facturasId;
-    }
-
-    public List<List<String>> getNombresServiciosFacturaAtencion(){
-        List<List<String>> serviciosPorFactura = new ArrayList<>();
-        List<List<Servicio>> servicios_de_factura = new ArrayList<>();
-        for(FacturaAtencion facturaAtencion : this.getFacturasAtencions()){
-            servicios_de_factura.add(facturaAtencion.getServicios());
-        }
-        for(List<Servicio> lista_servicios : servicios_de_factura){
-            List<String> nombre_servicios = new ArrayList<>();
-            for (Servicio servicio : lista_servicios){
-                nombre_servicios.add(servicio.getNombre_servicio());
-            }
-            serviciosPorFactura.add(nombre_servicios);
-        }
-        return serviciosPorFactura;
-    }
-
-    public String factura_atencion_string(){
-        List<String> returnList = new ArrayList<>();
-        String stringFactura = null;
-        System.out.println(this.getFacturasAtencionById());
-        for (Integer factura = 0; factura <= this.getFacturasAtencions().toArray().length; factura++) {
-            stringFactura = factura + ", ";
-            List<String> nombres = new ArrayList<>();
-            nombres = this.getNombresServiciosFacturaAtencion().get((factura));
-            stringFactura = stringFactura + " " + nombres.toString();
-            returnList.add(stringFactura);
-        }
-        return returnList.toString();
-    }
 
 
 }

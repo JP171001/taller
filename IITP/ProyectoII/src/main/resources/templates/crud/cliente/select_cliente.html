@@ -16,22 +16,16 @@
         <tr>
             <th>Cedula</th>
             <th>Nombre Completo</th>
-            <th>Direccion</th>
-            <th>Telefono</th>
-            <th>Mascotas</th>
+            <th>email</th>
             <th>Facturas Compra</th>
-            <th>Facturas Atencion</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="actual:${clientes}">
             <td th:text="${actual.getCedula()}"></td>
             <td th:text="${actual.getNombreCompleto()}"></td>
-            <td th:text="${actual.getDireccion()}"></td>
-            <td th:text="${actual.getTelefono()}"></td>
-            <td th:text="${actual.getMascotasByName()}"></td>
+            <td th:text="${actual.getEmail()}"></td>
             <td th:text="${actual.getFacturasCompraById()}"></td>
-            <td th:text="${actual.getFacturasAtencionById()}"></td>
             <td >
                 <a href="updateCliente/${actual.getCedula()}" class="btn btn-warning">Editar</a>
                 <a class="btn btn-danger">Eliminar</a>

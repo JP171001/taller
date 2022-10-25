@@ -2,7 +2,6 @@ package com.example.demo.controller.customMethodsController;
 
 
 import com.example.demo.model.clientePackage.Cliente;
-import com.example.demo.model.clientePackage.FacturaAtencion;
 import com.example.demo.model.clientePackage.FacturaCompra;
 import com.example.demo.service.clientePackage.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,15 +40,11 @@ public class ListarFacturasController {
         //Se obtiene al cliente en especifico
         Cliente actual = clienteService.getClienteById(id);
 
-        //Se obtienen las facturas de atencion
-        List<FacturaAtencion> facturaAtencions = actual.getFacturasAtencions();
-
         //Se obtienen las facturas de compra
         List<FacturaCompra> facturaCompras = actual.getFacturasCompra();
 
         //Se añaden al modelo de la vista
         model.addAttribute("cliente", actual);
-        model.addAttribute("factura_atencion", facturaAtencions);
         model.addAttribute("factura_compra", facturaCompras);
 
         return "post/facturas_cliente";

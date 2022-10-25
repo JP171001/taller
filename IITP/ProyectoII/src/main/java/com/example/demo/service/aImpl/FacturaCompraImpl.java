@@ -1,7 +1,6 @@
 package com.example.demo.service.aImpl;
 
 import com.example.demo.dao.clientePackage.FacturaCompraDAO;
-import com.example.demo.model.clientePackage.FacturaAtencion;
 import com.example.demo.model.clientePackage.FacturaCompra;
 import com.example.demo.service.clientePackage.FacturaCompraService;
 import org.springframework.beans.factory.annotation.Autowired;

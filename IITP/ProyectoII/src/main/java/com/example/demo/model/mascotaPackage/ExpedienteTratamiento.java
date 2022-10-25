@@ -1,7 +1,7 @@
 package com.example.demo.model.mascotaPackage;
 
 
-import com.example.demo.model.veterinarioPackage.Veterinario;
+import com.example.demo.model.administradorPackage.Administrador;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -24,7 +24,7 @@ public class ExpedienteTratamiento {
 
     @ManyToOne
     @JoinColumn(name="cedula_vet",nullable = false)
-    private Veterinario veterinario;
+    private Administrador administrador;
 
     @ManyToOne
     @JoinColumn(name = "id_mascota")
@@ -44,9 +44,9 @@ public class ExpedienteTratamiento {
 
     public void setDescripcion(String descripcion) {this.descripcion = descripcion;}
 
-    public Veterinario getVeterinario() {return veterinario;}
+    public Administrador getVeterinario() {return administrador;}
 
-    public void setVeterinario(Veterinario veterinario) {this.veterinario = veterinario;}
+    public void setVeterinario(Administrador administrador) {this.administrador = administrador;}
 
     public Mascota getMascota() {return mascota;}
 
