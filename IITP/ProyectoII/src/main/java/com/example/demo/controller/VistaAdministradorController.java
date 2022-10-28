@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping
 public class VistaAdministradorController {
-    @GetMapping("/")
+    @GetMapping("/administrador")
     public String inicio(Model model){
         model.addAttribute("test");
-        return "index";
+        return "administrador";
     }
 }

@@ -1,6 +1,5 @@
-package com.example.demo.model.hospitalPackage;
+package com.example.demo.model.ventaPackage;
 
-import com.example.demo.model.mascotaPackage.Mascota;
 import com.example.demo.model.clientePackage.Cliente;
 
 import javax.persistence.*;
@@ -25,10 +24,6 @@ public class VentaRepuestos {
 
     @OneToMany(mappedBy = "ventaAsociada")
     private List<Cliente> clienteList;
-
-    @OneToMany(mappedBy = "hospital_asociado")
-    private List<Mascota> mascotaList;
-
 
     //Gets y setters
     public int getIdentificador() {
@@ -67,16 +62,5 @@ public class VentaRepuestos {
         }
         return clientesName;
     }
-
-    //Obtiene las mascotas de la entidad por nombre en vez de por instancia de clase
-    public List<String> getMascotasByName(){
-        List<String> mascotasName = new ArrayList<>();
-
-        for(Mascota mascota : this.mascotaList){
-            mascotasName.add(mascota.getNombre_mascota());
-        }
-        return mascotasName;
-    }
-
 
 }

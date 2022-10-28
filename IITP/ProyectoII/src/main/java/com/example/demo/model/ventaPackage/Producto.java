@@ -1,4 +1,4 @@
-package com.example.demo.model.hospitalPackage;
+package com.example.demo.model.ventaPackage;
 
 import com.example.demo.model.clientePackage.FacturaCompra;
 

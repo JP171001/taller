@@ -1,8 +1,7 @@
 package com.example.demo.model.clientePackage;
 
 import com.example.demo.model.abstracts.FacturasInterface;
-import com.example.demo.model.mascotaPackage.Mascota;
-import com.example.demo.model.hospitalPackage.Producto;
+import com.example.demo.model.ventaPackage.Producto;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -41,12 +40,6 @@ public class FacturaCompra implements FacturasInterface {
             joinColumns = @JoinColumn(name = "numero_factura"),
             inverseJoinColumns = @JoinColumn(name = "id_producto"))
     private List<Producto> productos_comprados;
-
-    @ManyToMany
-    @JoinTable(name = "producto_mascota",
-                joinColumns = @JoinColumn(name = "numero_factura"),
-                inverseJoinColumns = @JoinColumn(name = "id_mascota"))
-    private List<Mascota> mascota_asociadas;
 
     //Gets y setters
     public int getNumeroFacturaCompra() {
@@ -96,15 +89,6 @@ public class FacturaCompra implements FacturasInterface {
     public void setProductos_comprados(List<Producto> productos_comprados) {
         this.productos_comprados = productos_comprados;
     }
-
-    public List<Mascota> getMascota_asociadas() {
-        return mascota_asociadas;
-    }
-
-    public void setMascota_asociadas(List<Mascota> mascota_asociadas) {
-        this.mascota_asociadas = mascota_asociadas;
-    }
-
 
     //Metodos extra
 

@@ -1,9 +1,8 @@
 package com.example.demo.model.clientePackage;
 
-import com.example.demo.model.hospitalPackage.VentaRepuestos;
-import com.example.demo.model.hospitalPackage.Producto;
+import com.example.demo.model.ventaPackage.VentaRepuestos;
+import com.example.demo.model.ventaPackage.Producto;
 import com.example.demo.model.abstracts.Usuario;
-import com.example.demo.model.mascotaPackage.Mascota;
 
 import javax.persistence.*;
 import java.util.ArrayList;

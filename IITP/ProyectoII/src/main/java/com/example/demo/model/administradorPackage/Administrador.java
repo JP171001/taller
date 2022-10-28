@@ -1,12 +1,10 @@
 package com.example.demo.model.administradorPackage;
 
 
-import com.example.demo.model.hospitalPackage.VentaRepuestos;
+import com.example.demo.model.ventaPackage.VentaRepuestos;
 import com.example.demo.model.abstracts.Usuario;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "administrador")

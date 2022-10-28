@@ -1,8 +1,8 @@
 package com.example.demo.service.aImpl;
 
 import com.example.demo.dao.hospitalPackage.ProductoDAO;
-import com.example.demo.model.hospitalPackage.Producto;
-import com.example.demo.service.hospitalPackage.ProductoService;
+import com.example.demo.model.ventaPackage.Producto;
+import com.example.demo.service.ventaPackage.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

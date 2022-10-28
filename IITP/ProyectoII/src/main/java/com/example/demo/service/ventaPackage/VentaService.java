@@ -1,10 +1,10 @@
-package com.example.demo.service.hospitalPackage;
+package com.example.demo.service.ventaPackage;
 
-import com.example.demo.model.hospitalPackage.VentaRepuestos;
+import com.example.demo.model.ventaPackage.VentaRepuestos;
 
 import java.util.List;
 
-public interface HospitalService {
+public interface VentaService {
 
     List<VentaRepuestos> getAllHospitales();
 

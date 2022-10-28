@@ -1,6 +1,6 @@
 package com.example.demo.dao.hospitalPackage;
 
-import com.example.demo.model.hospitalPackage.Producto;
+import com.example.demo.model.ventaPackage.Producto;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 //DAO para acceder a las operaciones de la base de datos en la entidad de los productos

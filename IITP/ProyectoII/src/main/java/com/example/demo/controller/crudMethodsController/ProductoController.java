@@ -1,7 +1,6 @@
 package com.example.demo.controller.crudMethodsController;
 
-import com.example.demo.service.hospitalPackage.ProductoService;
-import com.example.demo.service.mascotaPackage.MascotaService;
+import com.example.demo.service.ventaPackage.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
