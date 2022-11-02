@@ -20,7 +20,7 @@ public class ListarProductosController {
     //Pantalla mostrar los productos
     @GetMapping("/productos_existentes")
     public String listDueño(Model model){
-        model.addAttribute("pe",productoService.getAllProducto());
+        model.addAttribute("pe", productoService.getAllProducto());
         return "post/productos_existentes";
     }
 

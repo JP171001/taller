@@ -15,6 +15,7 @@ public class Producto {
     //en la base de datos
     @Id
     @Column(name = "id_prod", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_prod;
 
     @Column(name = "nombre_prod")
@@ -22,6 +23,9 @@ public class Producto {
 
     @Column(name = "descripcion_prod")
     private String descripcion_prod;
+
+    @Column(name = "precio_prod")
+    private Double precio_prod;
 
     @Column(name = "cantidad_existente")
     private int cantidad_existente;
@@ -62,6 +66,15 @@ public class Producto {
     public void setDescripcion_prod(String descripcion_prod) {
         this.descripcion_prod = descripcion_prod;
     }
+
+    public Double getPrecio_prod() {
+        return precio_prod;
+    }
+
+    public void setPrecio_prod(Double precio_prod) {
+        this.precio_prod = precio_prod;
+    }
+
 
     public int getCantidad_existente() {
         return cantidad_existente;

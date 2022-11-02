@@ -12,6 +12,6 @@ public class VistaAdministradorController {
     @GetMapping("/administrador")
     public String inicio(Model model){
         model.addAttribute("test");
-        return "administrador";
+        return "admin";
     }
 }

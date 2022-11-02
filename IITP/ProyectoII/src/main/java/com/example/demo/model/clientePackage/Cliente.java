@@ -5,6 +5,7 @@ import com.example.demo.model.ventaPackage.Producto;
 import com.example.demo.model.abstracts.Usuario;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,11 +17,11 @@ public class Cliente extends Usuario {
     //Anotacion para hacer las relaciones respectivas de muchos a uno en la base de datos,
     //Con esto spring se encarga de hacer las conexiones respectivas a nivel de java, obentiendo los datos de las distinas tablas
     //en la base de datos
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "venta_id",nullable = false)
     private VentaRepuestos ventaAsociada;
 
-    @OneToMany(mappedBy = "cliente")
+    @OneToMany(mappedBy = "cliente", fetch = FetchType.EAGER)
     private List<FacturaCompra> facturasCompra;
 
 

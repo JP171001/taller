@@ -10,7 +10,7 @@ public abstract class Usuario {
     //Atributos de una persona
     //La anotacion de column en cada atributo es para denotar su posicion en la base de datos
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    // @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cedula")
     private int cedula;
 
