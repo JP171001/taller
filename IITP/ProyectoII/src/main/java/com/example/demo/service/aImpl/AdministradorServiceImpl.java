@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+// =================================================================================================
+// Clase que contiene los atributos de los administradores
+// =================================================================================================
 @Service
 public class AdministradorServiceImpl implements AdministradorService {
 

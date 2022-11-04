@@ -4,9 +4,13 @@ import com.example.demo.model.clientePackage.FacturaCompra;
 
 import java.util.Date;
 import java.util.List;
-
+// =================================================================================================
+// Interface para acceder a las operaciones de la base de datos en la entidad de la factura de compra de repuestos
+// =================================================================================================
 public interface FacturaCompraService {
-
+    // =================================================================================================
+    // Metodo para obtener todas las facturas de compra
+    // =================================================================================================
     List<FacturaCompra> getAllFacturasCompra();
 
     FacturaCompra saveFactura(FacturaCompra facturaCompra);

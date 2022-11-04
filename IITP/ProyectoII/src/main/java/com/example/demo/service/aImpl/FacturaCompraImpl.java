@@ -8,13 +8,20 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
-
+// =================================================================================================
+// Clase que contiene los atributos de las facturas de compra de repuestos
+// =================================================================================================
 @Service
 public class FacturaCompraImpl implements FacturaCompraService {
-
+    // =================================================================================================
+    // Atributos de la clase
+    // =================================================================================================
     @Autowired
     private FacturaCompraDAO facturaCompraDAO;
 
+    // =================================================================================================
+    // Métodos de la clase para acceder a las operaciones de la base de datos
+    // =================================================================================================
     @Override
     public List<FacturaCompra> getAllFacturasCompra() {
         return facturaCompraDAO.findAll();
@@ -39,7 +46,9 @@ public class FacturaCompraImpl implements FacturaCompraService {
     public void deleteFactura(int identificador) {
         facturaCompraDAO.deleteById(identificador);
     }
-
+    // =================================================================================================
+    // Métodos de lista de facturas de compra
+    // =================================================================================================
     @Override
     public List<FacturaCompra> listarPorFechas(Date fecha1, Date fecha2) {
         return facturaCompraDAO.listarPorFechas(fecha1, fecha2);

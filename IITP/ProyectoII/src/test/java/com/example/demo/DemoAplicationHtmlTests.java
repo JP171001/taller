@@ -3,11 +3,9 @@ package com.example.demo;
 import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlInput;
-import com.gargoylesoftware.htmlunit.html.HtmlNumberInput;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import com.gargoylesoftware.htmlunit.html.HtmlTextInput;
 import org.junit.jupiter.api.Test;
-import com.gargoylesoftware.htmlunit.javascript.*;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

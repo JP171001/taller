@@ -8,40 +8,62 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
+// =================================================================================================
 //Esta anotacion hace saber el tipo de bean, en este caso una entidad
+// =================================================================================================
 @Entity
 @Table(name = "factura_compra") //Se hace referencia a la tabla en la base de datos
 public class FacturaCompra implements FacturasInterface {
-
+    // =================================================================================================
     //Anotacion para hacer las relaciones respectivas de muchos a uno en la base de datos,
     //Con esto spring se encarga de hacer las conexiones respectivas a nivel de java, obentiendo los datos de las distinas tablas
     //en la base de datos
+    // =================================================================================================
     @Id
     @Column(name = "numero_factura_compra")
     private int numero_factura_compra;
 
+    // =================================================================================================
+    // Anotacion para hacer las relaciones respectivas de muchos a uno en la base de datos,
+    // Con esto spring se encarga de hacer las conexiones respectivas a nivel de java, obentiendo los datos de las distinas tablas
+    // en la base de datos
+    // =================================================================================================
     @Column(name = "fecha")
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fecha;
-
+    // =================================================================================================
+    // Anotacion para hacer las relaciones respectivas de muchos a uno en la base de datos,
+    // Con esto spring se encarga de hacer las conexiones respectivas a nivel de java, obentiendo los datos de las distinas tablas
+    // en la base de datos
+    // =================================================================================================
     @ElementCollection
     @CollectionTable(name = "factura_producto", joinColumns = @JoinColumn(name = "numero_factura"))
     @Column(name = "cantidad_producto")
     private List<Integer> cantidad_vendida;
 
+    // =================================================================================================
+    // Anotacion para hacer las relaciones respectivas de muchos a uno en la base de datos,
+    // Con esto spring se encarga de hacer las conexiones respectivas a nivel de java, obentiendo los datos de las distinas tablas
+    // en la base de datos
+    // =================================================================================================
     @ManyToOne
     @JoinColumn(name="cedula_cliente",nullable = false)
     private Cliente cliente;
 
+    // =================================================================================================
+    // Anotacion para hacer las relaciones respectivas de muchos a uno en la base de datos,
+    // Con esto spring se encarga de hacer las conexiones respectivas a nivel de java, obentiendo los datos de las distinas tablas
+    // en la base de datos
+    // =================================================================================================
     @ManyToMany
     @JoinTable(name = "factura_producto",
             joinColumns = @JoinColumn(name = "numero_factura"),
             inverseJoinColumns = @JoinColumn(name = "id_producto"))
     private List<Producto> productos_comprados;
-
+    // =================================================================================================
     //Gets y setters
+    // =================================================================================================
     public int getNumeroFacturaCompra() {
         return numero_factura_compra;
     }
@@ -91,8 +113,9 @@ public class FacturaCompra implements FacturasInterface {
     }
 
     //Metodos extra
-
-    //Implementacion de los metodos de la interfaz
+    // =================================================================================================
+    //Implementacion de los metodos de la interfaz FacturasInterface
+    // =================================================================================================
     @Override
     public String getProductosByName(){
         String productos = "";

@@ -7,13 +7,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+// =================================================================================================
+// Clase que contiene los atributos de los productos
+// =================================================================================================
 @Service
 public class ProductoServiceImpl implements ProductoService {
-
+    // =================================================================================================
+    // Atributos
+    // =================================================================================================
     @Autowired
     private ProductoDAO productodao;
 
+    // =================================================================================================
+    // Métodos
+    // =================================================================================================
     @Override
     public List<Producto> getAllProducto() {
         return productodao.findAll();
